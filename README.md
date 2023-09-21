@@ -1,6 +1,6 @@
 # vue2-lab
 
-based on [vue/cli@4](https://github.com/vuejs/vue-cli/tree/v4.5.19)
+based on [vue/cli@4](https://github.com/vuejs/vue-cli/tree/v4.5.19).
 
 ## Dependencies
 
