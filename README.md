@@ -1,19 +1,10 @@
 # vue2-lab
 
-## Project setup
-```
-npm install
-```
+based on [vue/cli@4](https://github.com/vuejs/vue-cli/tree/v4.5.19)
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Dependencies
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- webpack v4
+- vue v2
+- vuex v3
+- vue-router v3
