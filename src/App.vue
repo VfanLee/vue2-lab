@@ -1,32 +1,45 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <nav>
+      <RouterLink to="/">{{ $t('home') }}</RouterLink>
+      |
+      <RouterLink to="/about">{{ $t('about') }}</RouterLink>
+    </nav>
+
+    <LangSwitcher />
+
+    <RouterView />
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+<script>
+import LangSwitcher from '@/components/LangSwitcher.vue'
+
+export default {
+  name: 'App',
+
+  components: {
+    LangSwitcher
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+body {
   color: #2c3e50;
 }
 
-#nav {
+nav {
   padding: 30px;
-}
+  text-align: center;
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+  a {
+    font-weight: bold;
+    color: #2c3e50;
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+    &.router-link-exact-active {
+      color: hsla(160, 100%, 37%, 1);
+    }
+  }
 }
 </style>
