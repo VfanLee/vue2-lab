@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import HomeView from '@/views/home.vue'
 
 Vue.use(VueRouter)
 
@@ -7,17 +8,22 @@ const routes = [
   {
     path: '/home',
     name: 'Home',
-    component: () => import(/* webpackChunkName: "home" */ '@/views/home-view.vue')
+    component: HomeView
+  },
+  {
+    path: '/reactivity',
+    name: 'reactivity',
+    component: () => import(/* webpackChunkName: "reactivity" */ '@/views/basic/reactivity.vue')
+  },
+  {
+    path: '/model',
+    name: 'model',
+    component: () => import(/* webpackChunkName: "model" */ '@/views/basic/model.vue')
   },
   {
     path: '/tinymce',
     name: 'tinymceView',
-    component: () => import(/* webpackChunkName: "tinymce" */ '@/views/tinymce-view.vue')
-  },
-  {
-    path: '/input',
-    name: 'inputView',
-    component: () => import(/* webpackChunkName: "input" */ '@/views/input-view.vue')
+    component: () => import(/* webpackChunkName: "tinymceView" */ '@/views/tinymce-view.vue')
   },
   {
     path: '*',
