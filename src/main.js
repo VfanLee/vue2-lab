@@ -4,14 +4,17 @@ import store from './store'
 import router from './router'
 
 import 'element-ui/lib/theme-chalk/index.css'
+import 'vant/lib/index.css'
 import '@/styles/var.css'
 
 import App from './App.vue'
 import ElementUI from 'element-ui'
+import Vant from 'vant'
 
 Vue.use(ElementUI, {
   i18n: (key, value) => i18n.t(key, value)
 })
+Vue.use(Vant)
 
 Vue.config.productionTip = false
 

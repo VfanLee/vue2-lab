@@ -2,11 +2,17 @@
   <div class="home">
     <h2>{{ $t('home') }}</h2>
 
-    <section>{{ $t('currentTime', { time: currentTime }) }}</section>
-    <section v-html="$t('currentTime', { time: currentTimeHtml })"></section>
+    <section>{{ $t('currentDate', { date: currentDate }) }}</section>
+    <section v-html="$t('currentDate', { date: currentDateHtml })"></section>
 
     <section>
-      <el-calendar v-model="calendarValue" />
+      <h2>Element UI</h2>
+      <el-date-picker v-model="currentDate" type="datetime"></el-date-picker>
+    </section>
+
+    <section>
+      <h2>Vant v2</h2>
+      <van-datetime-picker v-model="currentDate" type="datehour" />
     </section>
   </div>
 </template>
@@ -16,9 +22,8 @@ export default {
   name: 'Home',
   data() {
     return {
-      calendarValue: '',
-      currentTime: new Date(),
-      currentTimeHtml: `<span style="color: var(--primary-color)">${new Date()}</span>`
+      currentDate: new Date(),
+      currentDateHtml: `<span style="color: var(--primary-color)">${new Date()}</span>`
     }
   }
 }

@@ -1,17 +1,14 @@
 import i18n from '@/i18n'
 import router from '@/router'
-import { setCacheLang } from '@/utils/lang'
+import { setCacheLang, setVantLang, setDir } from '@/utils/lang'
 
-// --- init settings ---
+// --- init ---
 ;(function () {
   const i18nLocale = i18n.locale
-  if (i18nLocale === 'ar') {
-    document.body.dir = 'rtl'
-  } else {
-    document.body.dir = 'ltr'
-  }
+  setVantLang(i18nLocale)
+  setDir(i18nLocale)
 })()
-// --- init settings ---
+// --- init ---
 
 const state = {
   currentLang: i18n.locale
@@ -27,12 +24,9 @@ const mutations = {
 
 const actions = {
   setLang({ commit }, lang) {
-    if (lang === 'ar') {
-      document.body.dir = 'rtl'
-    } else {
-      document.body.dir = 'ltr'
-    }
     i18n.locale = lang
+    setVantLang(lang)
+    setDir(lang)
     commit('SET_LANG', lang)
     setCacheLang(lang)
     document.title = i18n.t(router.currentRoute.meta.title)

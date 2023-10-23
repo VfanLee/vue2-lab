@@ -1,5 +1,5 @@
 {
   "home": "الصفحة الأمامية",
   "about": "عن",
-  "currentTime": "الوقت الحالي:{time}"
+  "currentDate": "التاريخ الحالي: {date}"
 }
