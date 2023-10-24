@@ -1,12 +1,12 @@
 import i18n from '@/i18n'
 import router from '@/router'
-import { setCacheLang, setVantLang, setDir } from '@/utils/lang'
+import { setCacheLang, setVantLang, setPageDir } from '@/utils/lang'
 
 // --- init ---
 ;(function () {
   const i18nLocale = i18n.locale
   setVantLang(i18nLocale)
-  setDir(i18nLocale)
+  setPageDir(i18nLocale)
 })()
 // --- init ---
 
@@ -26,7 +26,7 @@ const actions = {
   setLang({ commit }, lang) {
     i18n.locale = lang
     setVantLang(lang)
-    setDir(lang)
+    setPageDir(lang)
     commit('SET_LANG', lang)
     setCacheLang(lang)
     document.title = i18n.t(router.currentRoute.meta.title)

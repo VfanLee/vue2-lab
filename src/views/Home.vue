@@ -6,13 +6,13 @@
     <section v-html="$t('currentDate', { date: currentDateHtml })"></section>
 
     <section>
-      <h2>Element UI</h2>
-      <el-date-picker v-model="currentDate" type="datetime"></el-date-picker>
+      <h2>Element UI【PC】</h2>
+      <el-date-picker v-model="currentDate1" type="datetime"></el-date-picker>
     </section>
 
     <section>
-      <h2>Vant v2</h2>
-      <van-datetime-picker v-model="currentDate" type="datehour" />
+      <h2>Vant v2【Mobile】</h2>
+      <van-datetime-picker v-model="currentDate2" type="datetime" />
     </section>
   </div>
 </template>
@@ -23,7 +23,9 @@ export default {
   data() {
     return {
       currentDate: new Date(),
-      currentDateHtml: `<span style="color: var(--primary-color)">${new Date()}</span>`
+      currentDateHtml: `<span style="color: var(--primary-color)">${new Date()}</span>`,
+      currentDate1: new Date(),
+      currentDate2: new Date()
     }
   }
 }

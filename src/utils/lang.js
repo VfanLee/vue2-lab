@@ -11,6 +11,7 @@ export const setCacheLang = lang => {
   localStorage.setItem('lang', lang)
 }
 
+// vant 国际化参考：https://vant-contrib.gitee.io/vant/v2/#/zh-CN/locale
 export const setVantLang = lang => {
   const langObj = {
     zh: zhCN,
@@ -20,7 +21,7 @@ export const setVantLang = lang => {
   Locale.use(lang, langObj[lang])
 }
 
-export const setDir = lang => {
+export const setPageDir = lang => {
   if (lang === 'ar') {
     document.body.dir = 'rtl'
   } else {
