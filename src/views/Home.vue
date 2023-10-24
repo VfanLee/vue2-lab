@@ -7,12 +7,12 @@
 
     <section>
       <h2>Element UI【PC】</h2>
-      <el-date-picker v-model="currentDate1" type="datetime"></el-date-picker>
+      <el-calendar v-model="calendarValue" />
     </section>
 
     <section>
       <h2>Vant v2【Mobile】</h2>
-      <van-datetime-picker v-model="currentDate2" type="datetime" />
+      <van-calendar :poppable="false" :show-confirm="false" :style="{ height: '500px' }" />
     </section>
   </div>
 </template>
@@ -24,8 +24,7 @@ export default {
     return {
       currentDate: new Date(),
       currentDateHtml: `<span style="color: var(--primary-color)">${new Date()}</span>`,
-      currentDate1: new Date(),
-      currentDate2: new Date()
+      calendarValue: new Date()
     }
   }
 }

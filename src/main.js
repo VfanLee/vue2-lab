@@ -12,6 +12,7 @@ import ElementUI from 'element-ui'
 import Vant from 'vant'
 
 Vue.use(ElementUI, {
+  // Element UI 国际化：https://element.eleme.io/#/zh-CN/component/i18n
   i18n: (key, value) => i18n.t(key, value)
 })
 Vue.use(Vant)
